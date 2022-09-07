@@ -1,0 +1,29 @@
+spring:
+  # kafka:
+  #   producer:
+  #     value-serializer: 'org.apache.kafka.common.serialization.StringSerializer '
+  #     key-serializer: org.apache.kafka.common.serialization.StringSerializer
+  #     bootstrap-servers: localhost:9092
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+  application:
+    name: user-service
+  datasource:
+    password: ${user_access_key}
+    username: root
+    url: jdbc:mysql://avikp-mysql-instance-2.ccphteqk73ke.us-east-1.rds.amazonaws.com:3306/demoDB?createDatabaseIfNotExist=true
+# eureka:
+#   client:
+#     register-with-eureka: 'true'
+#     fetch-registry: 'true'
+#     serviceUrl:
+#       defaultZone: http://localhost:8070/eureka
+server:
+  port: '8082'
+  error:
+    include-message: always
