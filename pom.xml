@@ -12,6 +12,7 @@
 	<artifactId>user-management</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>user-management</name>
+	<packaging>war</packaging>
 	<description>User Management microservice</description>
 	<properties>
 		<java.version>11</java.version>
