@@ -45,6 +45,11 @@ public class UserAuthController {
 	@Autowired
 	private KafkaPublisher publisher;
 	
+	@GetMapping(value="/") 
+	public ResponseEntity<?> welcome() {
+		return new ResponseEntity<String>("Service is running",HttpStatus.OK);
+	}
+	
 	@PostMapping(value="/addUser", consumes= {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
 	public ResponseEntity<?> registerNewUser(@RequestBody User user) {
 		if(userService.addUser(user)!=null) {
